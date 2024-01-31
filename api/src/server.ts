@@ -1,12 +1,12 @@
 import express from "express";
 import axios from "axios";
+import cors from "cors";
 import "dotenv/config";
-
-console.log("API Key:", process.env.OPENWEATHERMAP_API_KEY);
 
 const app = express();
 const port = process.env.PORT || 3001;
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/weather/:city", async (req, res) => {
@@ -18,7 +18,7 @@ app.get("/weather/:city", async (req, res) => {
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
     );
     const weatherData = {
-      temperture: response.data.main.temp,
+      temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       conditions: response.data.weather[0].description,
     };
