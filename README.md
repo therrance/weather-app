@@ -1,4 +1,4 @@
-# Weather App Documentation
+# Weather App
 
 ## Backend
 
@@ -28,11 +28,3 @@ The frontend of the Weather App is implemented in React using Vite. It allows us
 - Install dependencies: `npm install`
 - Start the development server: `npm run dev`
 - Build for production: `npm run build`
-
-### Environment Variables
-
-- `REACT_APP_BACKEND_URL`: URL of the backend server.
-
-## Running with Docker Compose
-
-- Run the full application: `docker-compose up`
